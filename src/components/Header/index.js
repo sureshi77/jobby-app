@@ -4,8 +4,6 @@ import {FiLogOut} from 'react-icons/fi'
 import Cookies from 'js-cookie'
 import './index.css'
 
-const websiteLogo = 'https://assets.ccbp.in/frontend/react-js/logo-img.png'
-
 const Header = props => {
   const onClickLogout = () => {
     const {history} = props
@@ -18,7 +16,11 @@ const Header = props => {
       <ul className="header-ul-container">
         <li className="logo-container">
           <Link className="link" to="/">
-            <img className="logo" src={websiteLogo} alt="website logo" />
+            <img
+              className="logo"
+              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+              alt="website logo"
+            />
           </Link>
         </li>
         <li className="home-jobs-container">

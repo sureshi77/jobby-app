@@ -3,7 +3,6 @@ import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 
 import './index.css'
-import {async} from 'rxjs'
 
 const websiteLogoInForm =
   'https://assets.ccbp.in/frontend/react-js/logo-img.png'
@@ -31,7 +30,7 @@ class LoginForm extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
-    const LoginApiUrl = 'https://apis.ccbp.in/login'
+    const loginApiUrl = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),

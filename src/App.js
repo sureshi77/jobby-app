@@ -1,9 +1,10 @@
 import {Route, Switch, Redirect} from 'react-router-dom'
 import LoginForm from './components/LoginForm'
+import Home from './components/Home'
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import AboutJobItem from './components/AboutJobItem'
-import Alljobs from './components/AllJobs'
+import AllJobs from './components/AllJobs'
 
 import './App.css'
 
@@ -52,10 +53,10 @@ const App = () => (
   <Switch>
     <Route exact path="/login" component={LoginForm} />
     <ProtectedRoute exact path="/" component={Home} />
-    <ProtectedRoute exact path="/jobs" component={Alljobs} />
+    <ProtectedRoute exact path="/jobs" component={AllJobs} />
     <ProtectedRoute exact path="/jobs/:id" component={AboutJobItem} />
     <Route exact path="/not-found" component={NotFound} />
-    <Route to="/not-found" />
+    <Redirect to="/not-found" />
   </Switch>
 )
 

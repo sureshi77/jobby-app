@@ -27,7 +27,7 @@ class AboutJobItem extends Component {
     this.getJobData()
   }
 
-  getJobData = async props => {
+  getJobData = async () => {
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -94,12 +94,13 @@ class AboutJobItem extends Component {
       const {
         companyLogoUrl,
         companyWebsiteUrl,
+        employmentType,
         id,
         jobDescription,
         lifeAtCompany,
         location,
         packagePerAnnum,
-        ratting,
+        rating,
         skills,
         title,
       } = jobDataDetails[0]
@@ -149,7 +150,7 @@ class AboutJobItem extends Component {
             <h1>Skills</h1>
             <ul className="ul-job-details-container">
               {skills.map(eachItem => (
-                <li className="li-job-details-container" kry={eachItem.name}>
+                <li className="li-job-details-container" key={eachItem.name}>
                   <img
                     className="skill-img"
                     src={eachItem.imageUrl}

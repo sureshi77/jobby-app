@@ -2,6 +2,7 @@ import {MdLocationOn} from 'react-icons/md'
 import {AiFillStar} from 'react-icons/ai'
 
 const SimilarJobs = props => {
+  const {similarJobData} = props
   const {
     companyLogoUrl,
     id,
@@ -10,7 +11,7 @@ const SimilarJobs = props => {
     location,
     rating,
     title,
-  } = similarJobs
+  } = similarJobData
 
   console.log(similarJobData)
 
