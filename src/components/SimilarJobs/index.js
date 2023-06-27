@@ -5,8 +5,8 @@ const SimilarJobs = props => {
   const {similarJobData} = props
   const {
     companyLogoUrl,
-    id,
     jobDescription,
+
     employmentType,
     location,
     rating,
@@ -30,18 +30,18 @@ const SimilarJobs = props => {
             <p className="rating-job-text">{rating}</p>
           </div>
         </div>
-        <div className="second-part-job-container">
-          <h1 className="description-job-heading">Description</h1>
-          <p className="description-job-para">{jobDescription}</p>
+      </div>
+      <div className="second-part-job-container">
+        <h1 className="description-job-heading">Description</h1>
+        <p className="description-job-para">{jobDescription}</p>
+      </div>
+      <div className="location-job-type-container">
+        <div className="location-job-icon-container">
+          <MdLocationOn className="location-job-icon" />
+          <p className="location-job">{location}</p>
         </div>
-        <div className="location-job-type-container">
-          <div className="location-job-icon-container">
-            <MdLocationOn className="location-job-icon" />
-            <p className="location-job">{location}</p>
-          </div>
-          <div className="employment-job-type-icon-employment-type-container">
-            <p className="job-type">{employmentType}</p>
-          </div>
+        <div className="employment-job-type-icon-employment-type-container">
+          <p className="job-type">{employmentType}</p>
         </div>
       </div>
     </li>

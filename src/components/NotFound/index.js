@@ -1,5 +1,4 @@
 import Header from '../Header'
-
 import './index.css'
 
 const notFoundImage =
@@ -8,7 +7,7 @@ const notFoundImage =
 const NotFound = () => (
   <>
     <Header />
-    <div className="notfound-container">
+    <div className="not-found-container">
       <div className="not-found-image-container">
         <img className="not-found-img" src={notFoundImage} alt="not found" />
       </div>

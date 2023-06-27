@@ -72,7 +72,7 @@ class AboutJobItem extends Component {
           jobDescription: eachItem.job_description,
           employmentType: eachItem.employment_type,
           location: eachItem.location,
-          ratting: eachItem.ratting,
+          rating: eachItem.rating,
           title: eachItem.title,
         }),
       )
@@ -95,7 +95,7 @@ class AboutJobItem extends Component {
         companyLogoUrl,
         companyWebsiteUrl,
         employmentType,
-        id,
+
         jobDescription,
         lifeAtCompany,
         location,
@@ -173,7 +173,7 @@ class AboutJobItem extends Component {
             {similarJobsData.map(eachItem => (
               <SimilarJobs
                 key={eachItem.id}
-                similarJobsData={eachItem}
+                similarJobData={eachItem}
                 employmentType={employmentType}
               />
             ))}
@@ -208,7 +208,7 @@ class AboutJobItem extends Component {
     </div>
   )
 
-  renderJobLoadingReview = () => (
+  renderJobLoadingView = () => (
     <div className="job-details-loader" data-testid="loader">
       <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>
@@ -223,7 +223,7 @@ class AboutJobItem extends Component {
       case apiStatusConstants.failure:
         return this.renderJobFailureView()
       case apiStatusConstants.inProgress:
-        return this.renderJobLoadingReview()
+        return this.renderJobLoadingView()
       default:
         return null
     }

@@ -14,7 +14,7 @@ class LoginForm extends Component {
 
   onGetPassword = event => this.setState({password: event.target.value})
 
-  onGetSuccess = jwtToken => {
+  onSubmitSuccess = jwtToken => {
     const {history} = this.props
 
     Cookies.set('jwt_token', jwtToken, {expires: 30, path: '/'})
@@ -40,7 +40,7 @@ class LoginForm extends Component {
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
     } else {
-      this.onSubmitFailure(data.errorMsg)
+      this.onSubmitFailure(data.error_msg)
     }
   }
 
@@ -87,7 +87,7 @@ class LoginForm extends Component {
           />
           <br />
           <br />
-          <button className="form-submit-btn" type="button">
+          <button className="form-submit-btn" type="submit">
             Login
           </button>
           {showSubmitError && <p className="error-msg">*{errorMsg}</p>}
